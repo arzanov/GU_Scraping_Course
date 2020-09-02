@@ -9,7 +9,7 @@ headers = {'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleW
            'Authorization': 'Bearer a451e2b7202ff50e7fd1029061aa3ed6c019785b'}
 
 response = requests.get(main_link, headers=headers)
-user_data = response.text
+events_data = response.text
 
 with open('timepad_request.json', 'w') as f:
-    f.write(user_data)
+    f.write(events_data)
