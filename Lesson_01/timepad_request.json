@@ -1,0 +1,166 @@
+{
+    "total": 13081,
+    "values": [
+        {
+            "id": 6707,
+            "starts_at": "2040-12-12T00:00:00+0300",
+            "name": "Регистрируйся!",
+            "url": "https:\/\/c-club.timepad.ru\/event\/6707\/",
+            "categories": [
+                {
+                    "id": 462,
+                    "name": "Другие события"
+                }
+            ],
+            "moderation_status": "shown"
+        },
+        {
+            "id": 19717,
+            "starts_at": "2020-10-19T19:00:00+0300",
+            "name": "TOEFL с носителем языка в Учебном Центре Ad Astra",
+            "url": "https:\/\/larondine.timepad.ru\/event\/19717\/",
+            "poster_image": {
+                "default_url": "https:\/\/ucare.timepad.ru\/361d896c-539e-467c-84d3-1732219ec005\/-\/preview\/308x600\/-\/format\/jpeg\/poster_event_19717.jpg",
+                "uploadcare_url": "\/\/ucare.timepad.ru\/361d896c-539e-467c-84d3-1732219ec005\/"
+            },
+            "categories": [
+                {
+                    "id": 382,
+                    "name": "Иностранные языки"
+                }
+            ],
+            "moderation_status": "shown"
+        },
+        {
+            "id": 19723,
+            "starts_at": "2020-10-19T19:00:00+0300",
+            "name": "Учебный Центр  &quot;Ad Astra&quot;",
+            "url": "https:\/\/larondine.timepad.ru\/event\/19723\/",
+            "poster_image": {
+                "default_url": "https:\/\/ucare.timepad.ru\/b11fadb6-1e8b-4574-b8f9-41f4c0043c12\/-\/preview\/308x600\/-\/format\/jpeg\/poster_event_19723.jpg",
+                "uploadcare_url": "\/\/ucare.timepad.ru\/b11fadb6-1e8b-4574-b8f9-41f4c0043c12\/"
+            },
+            "categories": [
+                {
+                    "id": 382,
+                    "name": "Иностранные языки"
+                }
+            ],
+            "moderation_status": "shown"
+        },
+        {
+            "id": 22290,
+            "starts_at": "2020-09-09T19:00:00+0300",
+            "name": "Английский с нуля!",
+            "url": "https:\/\/larondine.timepad.ru\/event\/22290\/",
+            "poster_image": {
+                "default_url": "https:\/\/ucare.timepad.ru\/7da1f353-6fd7-46d0-91c2-c4eda1fb0ba6\/-\/preview\/308x600\/-\/format\/jpeg\/poster_event_22290.jpg",
+                "uploadcare_url": "\/\/ucare.timepad.ru\/7da1f353-6fd7-46d0-91c2-c4eda1fb0ba6\/"
+            },
+            "categories": [
+                {
+                    "id": 382,
+                    "name": "Иностранные языки"
+                }
+            ],
+            "moderation_status": "shown"
+        },
+        {
+            "id": 22295,
+            "starts_at": "2020-09-16T19:00:00+0300",
+            "name": "Испанский  с нуля!",
+            "url": "https:\/\/larondine.timepad.ru\/event\/22295\/",
+            "poster_image": {
+                "default_url": "https:\/\/ucare.timepad.ru\/692c11af-59cf-4b8a-b4df-370b8b95f27a\/-\/preview\/308x600\/-\/format\/jpeg\/poster_event_22295.jpg",
+                "uploadcare_url": "\/\/ucare.timepad.ru\/692c11af-59cf-4b8a-b4df-370b8b95f27a\/"
+            },
+            "categories": [
+                {
+                    "id": 382,
+                    "name": "Иностранные языки"
+                }
+            ],
+            "moderation_status": "shown"
+        },
+        {
+            "id": 22297,
+            "starts_at": "2020-09-28T19:00:00+0300",
+            "name": "Турецкий в &quot;Учебный Центр &quot;AD ASTRA&quot;",
+            "url": "https:\/\/larondine.timepad.ru\/event\/22297\/",
+            "poster_image": {
+                "default_url": "https:\/\/ucare.timepad.ru\/ccc7f5f8-0785-4192-a917-2d92aebfd56f\/-\/preview\/308x600\/-\/format\/jpeg\/poster_event_22297.jpg",
+                "uploadcare_url": "\/\/ucare.timepad.ru\/ccc7f5f8-0785-4192-a917-2d92aebfd56f\/"
+            },
+            "categories": [
+                {
+                    "id": 382,
+                    "name": "Иностранные языки"
+                }
+            ],
+            "moderation_status": "shown"
+        },
+        {
+            "id": 23049,
+            "starts_at": "2020-10-05T19:30:00+0300",
+            "name": "Итальянский в Учебном Центре AD ASTRA",
+            "url": "https:\/\/larondine.timepad.ru\/event\/23049\/",
+            "poster_image": {
+                "default_url": "https:\/\/ucare.timepad.ru\/d32e643a-a0f1-4e86-be1e-fe41a43a1436\/-\/preview\/308x600\/-\/format\/jpeg\/poster_event_23049.jpg",
+                "uploadcare_url": "\/\/ucare.timepad.ru\/d32e643a-a0f1-4e86-be1e-fe41a43a1436\/"
+            },
+            "categories": [
+                {
+                    "id": 382,
+                    "name": "Иностранные языки"
+                }
+            ],
+            "moderation_status": "shown"
+        },
+        {
+            "id": 23387,
+            "starts_at": "2020-10-05T19:00:00+0300",
+            "name": "Арабский в Учебном Центре &quot;Ad Astra&quot;",
+            "url": "https:\/\/larondine.timepad.ru\/event\/23387\/",
+            "poster_image": {
+                "default_url": "https:\/\/ucare.timepad.ru\/486f6915-00d2-40dc-a017-b9f2a2dd8056\/-\/preview\/308x600\/-\/format\/jpeg\/poster_event_23387.jpg",
+                "uploadcare_url": "\/\/ucare.timepad.ru\/486f6915-00d2-40dc-a017-b9f2a2dd8056\/"
+            },
+            "categories": [
+                {
+                    "id": 382,
+                    "name": "Иностранные языки"
+                }
+            ],
+            "moderation_status": "shown"
+        },
+        {
+            "id": 24598,
+            "starts_at": "2022-04-30T00:00:00+0300",
+            "name": "Восход солнца",
+            "url": "https:\/\/artyfarty.timepad.ru\/event\/24598\/",
+            "poster_image": {
+                "default_url": "https:\/\/ucare.timepad.ru\/582639f4-6cb7-4b27-9931-690e5be4cd1f\/-\/crop\/917x265\/0,111\/-\/preview\/-\/preview\/308x600\/-\/format\/jpeg\/poster_event_24598.jpg",
+                "uploadcare_url": "\/\/ucare.timepad.ru\/582639f4-6cb7-4b27-9931-690e5be4cd1f\/"
+            },
+            "categories": {},
+            "moderation_status": "not_moderated"
+        },
+        {
+            "id": 47537,
+            "starts_at": "2020-09-26T19:00:00+0300",
+            "name": "Французский язык!",
+            "url": "https:\/\/larondine.timepad.ru\/event\/47537\/",
+            "poster_image": {
+                "default_url": "https:\/\/ucare.timepad.ru\/06fe35c2-4779-4c9d-a294-85e319fedd7a\/-\/preview\/308x600\/-\/format\/jpeg\/poster_event_47537.jpg",
+                "uploadcare_url": "\/\/ucare.timepad.ru\/06fe35c2-4779-4c9d-a294-85e319fedd7a\/"
+            },
+            "categories": [
+                {
+                    "id": 382,
+                    "name": "Иностранные языки"
+                }
+            ],
+            "moderation_status": "featured"
+        }
+    ]
+}
