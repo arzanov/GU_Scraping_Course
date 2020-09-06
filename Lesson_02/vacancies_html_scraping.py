@@ -3,6 +3,10 @@ import requests
 import re
 import pandas as pd
 
+
+RESULT_FILE_PATH = 'vacancies.csv'
+
+
 def calc_salary(vacancy, tag, param, value):
     """
     Возвращает минимальную и максимальную границы зарплаты по вакансии
@@ -142,8 +146,8 @@ def scan_superjob():
 
 
 headers = {'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.83 Safari/537.36'}
+
 user_request = input('Укажите название вакансии: ')
-RESULT_FILE_PATH = 'vacancies.csv'
 
 vacancies_table = pd.DataFrame(columns=['name', 'link', 'min_salary', 'max_salary', 'employer', 'source'])
 vacancies_table = pd.concat([vacancies_table, scan_hh(), scan_superjob()])
