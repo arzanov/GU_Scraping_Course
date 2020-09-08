@@ -18,25 +18,28 @@ def calc_salary(vacancy, tag, param, value):
     """
     try:
         vacancy_salary = vacancy.find(tag, {param: value}).text
+        salary = [el.replace('\xa0', '') for el in re.findall(r'\d+\s\d+', vacancy_salary)]
+        currency = vacancy_salary.split()[-1]
         if vacancy_salary != 'По договорённости':
             if vacancy_salary.startswith('от'):
-                salary_min = [el.replace('\xa0', '') for el in re.findall(r'\d+\s\d+', vacancy_salary)][0]
+                salary_min = salary[0]
                 salary_max = ''
             elif vacancy_salary.startswith('до'):
                 salary_min = ''
-                salary_max = [el.replace('\xa0', '') for el in re.findall(r'\d+\s\d+', vacancy_salary)][0]
-            elif len([el.replace('\xa0', '') for el in re.findall(r'\d+\s\d+', vacancy_salary)]) == 2:
-                salary_min = [el.replace('\xa0', '') for el in re.findall(r'\d+\s\d+', vacancy_salary)][0]
-                salary_max = [el.replace('\xa0', '') for el in re.findall(r'\d+\s\d+', vacancy_salary)][1]
+                salary_max = salary[0]
+            elif len(salary) == 2:
+                salary_min = salary[0]
+                salary_max = salary[1]
             else:
-                salary_min = salary_max = [el.replace('\xa0', '') for el in re.findall(r'\d+\s\d+', vacancy_salary)][0]
+                salary_min = salary_max = salary[0]
         else:
             salary_min = ''
             salary_max = ''
     except:
         salary_min = ''
         salary_max = ''
-    return salary_min, salary_max
+        currency = ''
+    return salary_min, salary_max, currency
 
 
 def scan_hh():
@@ -69,7 +72,7 @@ def scan_hh():
             vacancy_name = vacancy.find('a').text      # Наименование вакансии
             vacancy_link = vacancy.find('a')['href']   # Ссылка на вакансию
             # Зарплата
-            salary_min, salary_max = calc_salary(vacancy, 'span', 'data-qa', 'vacancy-serp__vacancy-compensation')
+            salary_min, salary_max, currency = calc_salary(vacancy, 'span', 'data-qa', 'vacancy-serp__vacancy-compensation')
 
             # Работодатель
             try:
@@ -81,6 +84,7 @@ def scan_hh():
             vacancy_data['link'] = vacancy_link
             vacancy_data['min_salary'] = salary_min
             vacancy_data['max_salary'] = salary_max
+            vacancy_data['currency'] = currency
             vacancy_data['employer'] = vacancy_employer
             vacancy_data['source'] = 'hh.ru'
             # Добавляем в список вакансий
@@ -89,9 +93,10 @@ def scan_hh():
             page += 1
             print('', end='\r')
         else:
-            print(f'\nНайдено {len(vacancies)} вакансий.')
-            result = pd.DataFrame(vacancies)
-            return result
+            break
+    print(f'\nНайдено {len(vacancies)} вакансий.')
+    result = pd.DataFrame(vacancies)
+    return result
 
 
 def scan_superjob():
@@ -120,7 +125,7 @@ def scan_superjob():
                     vacancy_name = vacancy.find('a').text                   # Наименование вакансии
                     vacancy_link = main_link + vacancy.find('a')['href']    # Ссылка на вакансию
                     # Зарплата
-                    salary_min, salary_max = calc_salary(vacancy, 'span', 'class',
+                    salary_min, salary_max, currency = calc_salary(vacancy, 'span', 'class',
                                                          '_1OuF_ _1qw9T f-test-text-company-item-salary')
                     # Работодатель
                     vacancy_employer = vacancy.find('span', {'class': '_3mfro _3Fsn4 f-test-text-vacancy-item-company-name _9fXTd _2JVkc _2VHxz _15msI'}).text
@@ -129,6 +134,7 @@ def scan_superjob():
                     vacancy_data['link'] = vacancy_link
                     vacancy_data['min_salary'] = salary_min
                     vacancy_data['max_salary'] = salary_max
+                    vacancy_data['currency'] = currency
                     vacancy_data['employer'] = vacancy_employer
                     vacancy_data['source'] = 'superjob.ru'
                     # Добавляем в список вакансий
@@ -137,19 +143,19 @@ def scan_superjob():
                 page += 1
                 print('', end='\r')
             else:
-                print(f'\n Найдено {len(vacancies)} вакансий.')
-                result = pd.DataFrame(vacancies)
-                return result
+                break
         except:
             print('\nВакансий не найдено.')
             return
-
+    print(f'\n Найдено {len(vacancies)} вакансий.')
+    result = pd.DataFrame(vacancies)
+    return result
 
 headers = {'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.83 Safari/537.36'}
 
 user_request = input('Укажите название вакансии: ')
 
-vacancies_table = pd.DataFrame(columns=['name', 'link', 'min_salary', 'max_salary', 'employer', 'source'])
+vacancies_table = pd.DataFrame(columns=['name', 'link', 'min_salary', 'max_salary', 'currency', 'employer', 'source'])
 vacancies_table = pd.concat([vacancies_table, scan_hh(), scan_superjob()])
 print(f'\nИтого найдено {vacancies_table.shape[0]} вакансий.')
 vacancies_table.to_csv(RESULT_FILE_PATH, index=False, encoding='utf-8')
